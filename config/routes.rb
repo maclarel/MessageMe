@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
+
+  # websocket support for chatroom using ActionCable
+  mount ActionCable.server, at: '/cable'
 end
